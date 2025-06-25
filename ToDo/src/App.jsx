@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([
@@ -42,7 +42,25 @@ function App() {
     }
   ])
 
-  return <div>Olá React!</div>; 
+  return (
+    <div className="app">
+      <h1>Lista de Tarefas</h1>
+      <div className="todo-List">
+        {todos.map(todo => (
+          <div className="todo">
+            <div class = "content">
+              <p>{todo.text}</p>
+              <p className="categoria">({todo.category})</p>
+            </div>
+            <div>
+              <button>Completar</button>
+              <button>x</button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default App
