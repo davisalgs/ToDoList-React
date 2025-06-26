@@ -1,21 +1,44 @@
-import React from 'react'
+import {useState} from 'react'
 
 const TodoForm = () => {
-  return <div className='todo-form'>
-        <h2>Criar tarefa: </h2>
-        <form >
-            <input type="text" placeholder='Digite o título'/>
-            <select>
-                <option value="">Selecione</option>
-                <option value="Trabalho">Trabalho</option>
-                <option value="Pessoal">Pessoal</option>
-                <option value="Estudos">Estudos</option>
+  const [value, setValue] = useState('');
+  const [category, setCategory] = useState('');
 
-            </select>
-            <button type='submit'>Criar tarefa</button>
-        </form>
+  const handleSubmit = (e) => {
+    e.preventDeFault();
+    console.log("enviou formnulário");
+    if (value || category) return;
+    
+    setValue(""); 
+    setCategory(""); 
+    
+      
+    console.log(value, category);
+  };
+
+  return (
+    <div className="todo-form">
+      <h2>Criar tarefa: </h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Digite o título"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="">Selecione</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Pessoal">Pessoal</option>
+          <option value="Estudos">Estudos</option>
+        </select>
+        <button type="submit">Criar tarefa</button>
+      </form>
     </div>
-  
+  )
 }
 
 export default TodoForm
