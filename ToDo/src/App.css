@@ -1,7 +1,11 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  padding: 30px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #333;
   background-image: url("./img/city.jpg");
   background-size: cover;
@@ -10,10 +14,11 @@ body {
 
 .app {
   max-width: 600px;
-  margin: 0 auto;
   padding: 0.5rem 2rem;
   border-radius: 10px;
   background-color: #efefef;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 h1 {
@@ -31,3 +36,38 @@ p {
 input {
   box-sizing: border-box;
 }
+button {
+  background-color: #0b1894;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: pointer;
+  opacity: .8;
+  transition: .2s;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.todo-form {
+  padding-bottom: 1.5rem;
+}
+
+input, select {
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #bdbaba;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.complete {
+  background-color: #0b9b47;
+}
+
+.remove {
+  background-color: #be0c0c;
+}
+
+

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Todo from './components/Todo'
+import TodoForm from './components/TodoForm';
 import './App.css';
 
 function App() {
@@ -46,19 +46,11 @@ function App() {
     <div className="app">
       <h1>Lista de Tarefas</h1>
       <div className="todo-List">
-        {todos.map(todo => (
-          <div className="todo">
-            <div class = "content">
-              <p>{todo.text}</p>
-              <p className="categoria">({todo.category})</p>
-            </div>
-            <div>
-              <button>Completar</button>
-              <button>x</button>
-            </div>
-          </div>
+        {todos.map((todo) => (
+          <Todo todo={todo} />
         ))}
       </div>
+      <TodoForm />
     </div>
   );
 }
